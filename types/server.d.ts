@@ -16,4 +16,5 @@ export interface CreateTcpClientOptions {
   port: number;
   callback?: () => void;
   keepAlive?: boolean;
+  timeout?: number;
 }
