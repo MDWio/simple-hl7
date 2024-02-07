@@ -14,7 +14,7 @@ export declare const Server: {
 export interface CreateTcpClientOptions {
   host: string;
   port: number;
-  callback?: () => void;
+  callback?: (err?: Error, ack: any) => void;
   keepAlive?: boolean;
   timeout?: number;
 }
