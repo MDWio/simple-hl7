@@ -9,10 +9,10 @@ var Parser     = require('../lib/hl7/parser');
 var segment    = require('../lib/hl7/segment');
 
 var delimiters = {
-  subcomponentSeperator: "&",
+  subcomponentSeparator: "&",
   repititionCharacter: "~",
-  componentSeperator: "^",
-  fieldSeperator: "|"
+  componentSeparator: "^",
+  fieldSeparator: "|"
 }
 var parser = new Parser();
 
@@ -267,14 +267,14 @@ describe("Message", function() {
 
 describe("Parser", function() {
   describe(".parse()", function() {
-    it('should parse message with different segment seperators', function() {
+    it('should parse message with different segment separators', function() {
       var msg1 = "MSH|^~\\&|Header Field 1|Header Field 2\rNME|Component 1^Component 2|Field 2"
       var msg2 = "MSH|^~\\&|Header Field 1|Header Field 2\nNME|Component 1^Component 2|Field 2"
 
       var x = parser.parse(msg1);
 
       assert.equal(parser.parse(msg1).segments.length, 1);
-      assert.equal(new Parser({segmentSeperator: '\n'}).parse(msg2).segments.length, 1);
+      assert.equal(new Parser({segmentSeparator: '\n'}).parse(msg2).segments.length, 1);
     });
   });
   describe("Parse sample documents. Success = output same as input", function() {

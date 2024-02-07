@@ -1,8 +1,8 @@
 export interface Delimiters {
-  fieldSeperator: "|";
-  componentSeperator: "^";
-  subcomponentSeperator: "&";
+  fieldSeparator: "|";
+  componentSeparator: "^";
+  subcomponentSeparator: "&";
   escapeCharacter: "\\";
   repititionCharacter: "~";
-  segmentSeperator: "\r";
+  segmentSeparator: "\r";
 }

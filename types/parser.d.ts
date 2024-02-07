@@ -19,4 +19,4 @@ export declare class Parser {
   parseComponent(s: string): Component;
 }
 
-export type ParserOptions = string | { segmentSeperator: string };
+export type ParserOptions = string | { segmentSeparator: string };
