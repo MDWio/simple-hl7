@@ -1,20 +1,12 @@
 import { FileClient } from "./file-client";
 import { FileServer } from "./file-server";
-import { TcpClient } from "./tcp-client";
-import { TcpServer } from "./tcp-server";
+import { TcpClient, TcpClientOptions } from "./tcp-client";
+import { HandlerCallback, TcpServer, TcpServerOptions } from "./tcp-server";
 
 export declare const Server: {
-  createTcpServer(options, handler): TcpServer;
-  createTcpClient(options: CreateTcpClientOptions): TcpClient;
+  createTcpServer(options: TcpServerOptions, handler: HandlerCallback): TcpServer;
+  createTcpClient(options: TcpClientOptions): TcpClient;
   createTcpClient(host: string, port: number): TcpClient;
   createFileServer(options, handler): FileServer;
   createFileClient(dest): FileClient;
 };
-
-export interface CreateTcpClientOptions {
-  host: string;
-  port: number;
-  callback?: (err?: Error, ack: any) => void;
-  keepAlive?: boolean;
-  timeout?: number;
-}
