@@ -1,5 +1,5 @@
 {
-  "name": "simple-hl7",
+  "name": "@mdwio/simple-hl7",
   "version": "3.2.4",
   "description": "simple library for creating and parsing hl7 messages",
   "main": "lib/index.js",
@@ -15,7 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hitgeek/simple-hl7.git"
+    "url": "https://github.com/MDWio/simple-hl7"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/MDWio"
   },
   "keywords": [
     "hl7"
