@@ -44,7 +44,7 @@ console.log('tcp interface listening on ' + 7777);
 
 
 ////////////////////CLIENT///////////////////
-var parser = new hl7.Parser({segmentSeperator: '\n'});
+var parser = new hl7.Parser({segmentSeparator: '\n'});
 var client = hl7.Server.createTcpClient({
   host: 'localhost',
   port: 7777,
