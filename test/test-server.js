@@ -76,7 +76,7 @@ describe('TcpServer', function() {
   var tcpServer
   describe('.start()', function() {
     this.timeout(10000);
-    it('should start a tcp server listenting on specified port, and respond to messages', function(done) {
+    it('should start a tcp server listening on specified port, and respond to messages', function(done) {
       var parser = new hl7.Parser();
       var adt = parser.parse(fs.readFileSync('test/samples/adt.hl7').toString());
 

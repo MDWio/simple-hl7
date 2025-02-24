@@ -1,8 +1,6 @@
 var assert = require('assert');
 var fs     = require('fs');
 var hl7    = require('../lib/index.js');
-var net    = require('net');
-var path   = require('path');
 var server = hl7.Server;
 
 
@@ -15,7 +13,11 @@ describe('file', function() {
   describe('.start()', function() {
     this.timeout(10000);
     it('should start the file server listening on a folder, and emit event on new file', function(done) {
-      fs.mkdirSync('test/import');
+      var dir = 'test/import';
+      if (fs.existsSync(dir)) {
+        fs.rmSync(dir, { recursive: true });
+      }
+      fs.mkdirSync(dir);
       var hl7TestMessage = fs.readFileSync('test/samples/adt.hl7').toString().replace(/\r?\n/g, "\r");
 
       var app = hl7.file();
@@ -37,7 +39,7 @@ describe('file', function() {
 
       app.use(function(req, res, next) {
         req.shouldBeHere = true;
-        next()
+        next();
       });
 
       app.use(function(req, res, next) {
@@ -78,10 +80,9 @@ describe('file', function() {
 
 
 describe('tcp', function() {
-  var tcpServer
   describe('.start()', function() {
     this.timeout(10000);
-    it('should start a tcp server listenting on specified port, and respond to messages', function(done) {
+    it('should start a tcp server listening on specified port, and respond to messages', function(done) {
       var parser = new hl7.Parser();
       var adt = parser.parse(fs.readFileSync('test/samples/adt.hl7').toString());
 

@@ -1,14 +1,11 @@
 {
   "name": "@mdwio/simple-hl7",
-  "version": "3.2.5",
+  "version": "3.6.0",
   "description": "simple library for creating and parsing hl7 messages",
   "main": "lib/index.js",
   "types": "./types/index.d.ts",
   "directories": {
     "test": "test"
-  },
-  "devDependencies": {
-    "mocha": "10.3.0"
   },
   "scripts": {
     "test": "mocha"
@@ -26,12 +23,14 @@
   "author": "Bob Rupp <bob@rupp.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hitgeek/simple-hl7/issues"
+    "url": "https://github.com/MDWio/simple-hl7/issues"
   },
-  "homepage": "https://github.com/hitgeek/simple-hl7#readme",
+  "homepage": "https://github.com/MDWio/simple-hl7#readme",
   "dependencies": {
-    "moment": "^2.30.1",
-    "utils-merge": "^1.0.1",
-    "watch": "^1.0.2"
+    "chokidar": "^4.0.3",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "mocha": "11.1.0"
   }
 }
