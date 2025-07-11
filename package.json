@@ -31,6 +31,6 @@
     "moment": "^2.30.1"
   },
   "devDependencies": {
-    "mocha": "11.1.0"
+    "mocha": "11.7.1"
   }
 }
